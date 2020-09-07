@@ -1,0 +1,60 @@
+﻿@page
+@model BookStoreSampleApp.Triggered.Pages.Emails.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Email[0].CustomerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email[0].QueueDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email[0].SentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email[0].Body)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Email) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QueueDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Body)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
