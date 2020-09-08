@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace BookStoreSampleApp.Triggered
 {
@@ -28,11 +29,9 @@ namespace BookStoreSampleApp.Triggered
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-
-            services.AddTriggeredDbContext<ApplicationDbContext>(options =>
+            services.AddAspNetCoreTriggeredDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlite("Data Source=sample.db");
-                options.EnableSensitiveDataLogging();
             });
 
             services.AddTransient<EmailService>();
