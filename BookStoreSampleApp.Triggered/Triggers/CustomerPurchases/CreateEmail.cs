@@ -24,7 +24,7 @@ namespace BookStoreSampleApp.Triggered.Triggers.CustomerPurchases
             {
                 var email = new Email
                 {
-                    CustomerId = context.Entity.CustomerId,
+                    Customer = context.Entity.Customer,
                     QueueDate = DateTime.Now
                 };
 
