@@ -17,5 +17,7 @@ namespace BookStoreSampleApp.Common.Models
         public DateTime? SignupDate { get; set; }
 
         public ICollection<CustomerPurchase> Purchases { get; set; }
+
+        public ICollection<Email> Emails { get; set; }
     }
 }
