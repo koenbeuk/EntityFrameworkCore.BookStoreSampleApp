@@ -20,7 +20,7 @@ namespace BookStoreSampleApp.Triggered.Triggers.Customers
 
         public Task BeforeSave(ITriggerContext<Customer> context, CancellationToken cancellationToken)
         {
-            var freeBooks = _applicationDbcontext.Books
+             var freeBooks = _applicationDbcontext.Books
                 .Where(x => x.Price == 0)
                 .ToList();
 

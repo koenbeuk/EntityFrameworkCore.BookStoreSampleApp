@@ -1,7 +1,7 @@
 # A sample application used for demonstrating where EntityFrameworkCore.Triggered ads value
 
 ## Scenario
-(only for demo purposes): We're implementing a book store. We should keep track of the following entities: Books, Customers, Purchases and Emails. There are a few requirements that we need to cover:
+We're implementing a book store. We should keep track of the following entities: Books, Customers, Purchases and Emails. There are a few requirements that we need to cover:
 - When a book gets added/updated with a price of 0. All customers will automatically purchase this book for that price.
 - When a customer signs up, all books with a price of 0 will automatically be purchased by that customer.
 - When a customer signs up, we'll sent a welcome email to that customer automatically.
