@@ -29,7 +29,7 @@ namespace BookStoreSampleApp.Triggered
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddAspNetCoreTriggeredDbContext<ApplicationDbContext>(options =>
+            services.AddTriggeredDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlite("Data Source=sample.db");
             });
