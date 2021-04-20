@@ -29,19 +29,16 @@ namespace BookStoreSampleApp.Triggered
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddTriggeredDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlite("Data Source=sample.db");
+                options.UseTriggers(triggerOptions =>
+                {
+                    triggerOptions.AddAssemblyTriggers();
+                });
             });
 
             services.AddTransient<EmailService>();
-
-            services.AddTransient<IBeforeSaveTrigger<Book>, Triggers.Books.AutoPurchaseFreeBookForAllCustomers>();
-            services.AddTransient<IBeforeSaveTrigger<CustomerPurchase>, Triggers.CustomerPurchases.CreateEmail>();
-            services.AddTransient<IBeforeSaveTrigger<Customer>, Triggers.Customers.AutoPurchaseFreeBooks>();
-            services.AddTransient<IBeforeSaveTrigger<Customer>, Triggers.Customers.SendWelcomeEmail>();
-            services.AddTransient<IBeforeSaveTrigger<Customer>, Triggers.Customers.SetSignupDate>();
-            services.AddTransient<IAfterSaveTrigger<Email>, Triggers.Emails.SendEmail>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

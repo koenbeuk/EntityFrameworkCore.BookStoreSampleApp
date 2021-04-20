@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BookStoreSampleApp.Triggered
 {
-    public class ApplicationDbContext : TriggeredDbContext
+    public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
