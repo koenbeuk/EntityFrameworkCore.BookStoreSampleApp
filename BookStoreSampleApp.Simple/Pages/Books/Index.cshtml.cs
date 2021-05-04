@@ -7,14 +7,15 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using BookStoreSampleApp.Common.Models;
 using BookStoreSampleApp.Simple;
+using BookStoreSampleApp.Common;
 
 namespace BookStoreSampleApp.Simple.Pages.Books
 {
     public class IndexModel : PageModel
     {
-        private readonly BookStoreSampleApp.Simple.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public IndexModel(BookStoreSampleApp.Simple.ApplicationDbContext context)
+        public IndexModel(ApplicationDbContext context)
         {
             _context = context;
         }

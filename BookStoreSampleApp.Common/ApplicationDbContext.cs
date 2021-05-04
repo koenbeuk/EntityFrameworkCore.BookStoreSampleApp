@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookStoreSampleApp.Simple
+namespace BookStoreSampleApp.Common
 {
     public class ApplicationDbContext : DbContext
     {

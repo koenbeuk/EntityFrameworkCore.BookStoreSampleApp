@@ -7,14 +7,15 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using BookStoreSampleApp.Common.Models;
 using BookStoreSampleApp.Simple;
+using BookStoreSampleApp.Common;
 
 namespace BookStoreSampleApp.Simple.Pages.Emails
 {
     public class CreateModel : PageModel
     {
-        private readonly BookStoreSampleApp.Simple.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public CreateModel(BookStoreSampleApp.Simple.ApplicationDbContext context)
+        public CreateModel(ApplicationDbContext context)
         {
             _context = context;
         }

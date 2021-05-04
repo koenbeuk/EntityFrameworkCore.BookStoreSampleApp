@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BookStoreSampleApp.Common;
 using BookStoreSampleApp.Common.Models;
 using BookStoreSampleApp.Common.Services;
 using EntityFrameworkCore.Triggered;

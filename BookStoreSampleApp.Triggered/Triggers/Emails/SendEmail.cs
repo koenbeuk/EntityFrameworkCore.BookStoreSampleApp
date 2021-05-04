@@ -1,4 +1,5 @@
-﻿using BookStoreSampleApp.Common.Models;
+﻿using BookStoreSampleApp.Common;
+using BookStoreSampleApp.Common.Models;
 using BookStoreSampleApp.Common.Services;
 using EntityFrameworkCore.Triggered;
 using System;
@@ -21,7 +22,7 @@ namespace BookStoreSampleApp.Triggered.Triggers.Emails
             _emailService = emailService;
         }
 
-        public Task AfterSave(ITriggerContext<Email> context, CancellationToken cancellationToken)
+        public async Task AfterSave(ITriggerContext<Email> context, CancellationToken cancellationToken)
         {
             if (context.ChangeType == ChangeType.Added)
             {
@@ -30,9 +31,9 @@ namespace BookStoreSampleApp.Triggered.Triggers.Emails
                 _emailService.SendEmail(customer.EmailAddress, customer.DisplayName, context.Entity.Title, context.Entity.Body);
 
                 context.Entity.SentDate = DateTime.Now;
-            }
 
-            return Task.CompletedTask;
+                await _applicationDbContext.SaveChangesAsync();
+            }
         }
     }
 }

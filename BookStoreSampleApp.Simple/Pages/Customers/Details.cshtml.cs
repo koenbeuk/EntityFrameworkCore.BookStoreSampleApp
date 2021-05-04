@@ -7,14 +7,15 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using BookStoreSampleApp.Common.Models;
 using BookStoreSampleApp.Simple;
+using BookStoreSampleApp.Common;
 
 namespace BookStoreSampleApp.Simple.Pages.Customers
 {
     public class DetailsModel : PageModel
     {
-        private readonly BookStoreSampleApp.Simple.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public DetailsModel(BookStoreSampleApp.Simple.ApplicationDbContext context)
+        public DetailsModel(ApplicationDbContext context)
         {
             _context = context;
         }

@@ -9,15 +9,16 @@ using BookStoreSampleApp.Common.Models;
 using BookStoreSampleApp.Triggered;
 using System.Net.WebSockets;
 using BookStoreSampleApp.Common.Services;
+using BookStoreSampleApp.Common;
 
 namespace BookStoreSampleApp.Triggered.Pages.Customers
 {
     public class CreateModel : PageModel
     {
-        private readonly BookStoreSampleApp.Triggered.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
         private readonly EmailService _emailService;
 
-        public CreateModel(BookStoreSampleApp.Triggered.ApplicationDbContext context, EmailService emailService)
+        public CreateModel(ApplicationDbContext context, EmailService emailService)
         {
             _context = context;
             _emailService = emailService;

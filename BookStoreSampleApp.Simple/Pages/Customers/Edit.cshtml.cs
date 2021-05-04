@@ -8,14 +8,15 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BookStoreSampleApp.Common.Models;
 using BookStoreSampleApp.Simple;
+using BookStoreSampleApp.Common;
 
 namespace BookStoreSampleApp.Simple.Pages.Customers
 {
     public class EditModel : PageModel
     {
-        private readonly BookStoreSampleApp.Simple.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public EditModel(BookStoreSampleApp.Simple.ApplicationDbContext context)
+        public EditModel(ApplicationDbContext context)
         {
             _context = context;
         }

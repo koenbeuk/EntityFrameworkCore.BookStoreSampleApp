@@ -9,15 +9,16 @@ using Microsoft.EntityFrameworkCore;
 using BookStoreSampleApp.Common.Models;
 using BookStoreSampleApp.Triggered;
 using BookStoreSampleApp.Common.Services;
+using BookStoreSampleApp.Common;
 
 namespace BookStoreSampleApp.Triggered.Pages.Books
 {
     public class EditModel : PageModel
     {
-        private readonly BookStoreSampleApp.Triggered.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
         private readonly EmailService _emailService;
 
-        public EditModel(BookStoreSampleApp.Triggered.ApplicationDbContext context, EmailService emailService)
+        public EditModel(ApplicationDbContext context, EmailService emailService)
         {
             _context = context;
             _emailService = emailService;

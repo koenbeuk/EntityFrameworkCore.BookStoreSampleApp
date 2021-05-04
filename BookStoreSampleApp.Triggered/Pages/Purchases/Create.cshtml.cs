@@ -8,14 +8,15 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using BookStoreSampleApp.Common.Models;
 using BookStoreSampleApp.Triggered;
 using BookStoreSampleApp.Common.Services;
+using BookStoreSampleApp.Common;
 
 namespace BookStoreSampleApp.Triggered.Pages.Purchases
 {
     public class CreateModel : PageModel
     {
-        private readonly BookStoreSampleApp.Triggered.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public CreateModel(BookStoreSampleApp.Triggered.ApplicationDbContext context)
+        public CreateModel(ApplicationDbContext context)
         {
             _context = context;
         }

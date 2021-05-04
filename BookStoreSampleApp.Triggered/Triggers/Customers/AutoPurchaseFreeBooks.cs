@@ -1,4 +1,5 @@
-﻿using BookStoreSampleApp.Common.Models;
+﻿using BookStoreSampleApp.Common;
+using BookStoreSampleApp.Common.Models;
 using EntityFrameworkCore.Triggered;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,7 @@ namespace BookStoreSampleApp.Triggered.Triggers.Customers
             {
                 _applicationDbcontext.CustomerPurchases.Add(new CustomerPurchase
                 {
+                    BookId = book.Id,
                     Book = book,
                     Customer = context.Entity,
                     Price = 0,

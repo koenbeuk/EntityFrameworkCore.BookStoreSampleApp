@@ -1,4 +1,5 @@
-﻿using BookStoreSampleApp.Common.Models;
+﻿using BookStoreSampleApp.Common;
+using BookStoreSampleApp.Common.Models;
 using EntityFrameworkCore.Triggered;
 using System;
 using System.Collections.Generic;

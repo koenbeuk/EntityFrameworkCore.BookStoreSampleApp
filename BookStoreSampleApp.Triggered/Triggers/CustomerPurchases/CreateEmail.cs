@@ -1,4 +1,5 @@
-﻿using BookStoreSampleApp.Common.Models;
+﻿using BookStoreSampleApp.Common;
+using BookStoreSampleApp.Common.Models;
 using EntityFrameworkCore.Triggered;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace BookStoreSampleApp.Triggered.Triggers.CustomerPurchases
                     QueueDate = DateTime.Now
                 };
 
-                var book = _applicationDbContext.Books.Find(context.Entity.BookId);
+                var book = context.Entity.Book ?? _applicationDbContext.Books.Find(context.Entity.BookId);
 
                 if (context.Entity.Price == 0)
                 {

@@ -8,15 +8,16 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using BookStoreSampleApp.Common.Models;
 using BookStoreSampleApp.Simple;
 using BookStoreSampleApp.Common.Services;
+using BookStoreSampleApp.Common;
 
 namespace BookStoreSampleApp.Simple.Pages.Books
 {
     public class CreateModel : PageModel
     {
-        private readonly BookStoreSampleApp.Simple.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
         private readonly EmailService _emailService;
 
-        public CreateModel(BookStoreSampleApp.Simple.ApplicationDbContext context, EmailService emailService)
+        public CreateModel(ApplicationDbContext context, EmailService emailService)
         {
             _context = context;
             _emailService = emailService;

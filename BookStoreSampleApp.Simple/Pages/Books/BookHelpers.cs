@@ -1,4 +1,5 @@
-﻿using BookStoreSampleApp.Common.Models;
+﻿using BookStoreSampleApp.Common;
+using BookStoreSampleApp.Common.Models;
 using BookStoreSampleApp.Common.Services;
 using Microsoft.AspNetCore.Identity;
 using System;
